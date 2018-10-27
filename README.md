@@ -4,6 +4,8 @@ Manage your expenses, set goals, save money ... while having fun
   
 Everybody is welcome! Let's have fun coding together.  
 
+Plese use the BEM notation for your css http://getbem.com/introduction/
+
 # Run the app:  
 npm install  
   
