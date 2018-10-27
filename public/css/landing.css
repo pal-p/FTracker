@@ -1,0 +1,37 @@
+/* Box-sizing reset */
+html {
+  box-sizing: border-box;
+  
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* Utilities */
+
+.hero_section {
+  height: 100vh;
+  position: relative;
+}
+
+.hero {
+  position: absolute;
+  text-align: center;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero__content {
+  margin-bottom: 15rem;
+}
+
+.hero__title {
+  font-size: 5rem;
+  margin-bottom: 4rem;
+}
+.hero__lead {
+  font-size: 2rem;
+}

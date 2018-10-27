@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ./partials/head %>
+    <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+</head>
+
+<body>
+    <header>
+        <% include ./partials/header %>
+    </header>
+
+    <main role="main" class="main container">
+        <h1>Dashboard</h1>
+        <h2><%=user.username%></h2>
+        <ul>
+                <%if(user.accounts.length === 0){%>
+                    <li>No account yet</li>
+                    <%}%>
+        <%user.accounts.forEach((account, i)=>{%>
+            <li><%=account[i]%></li>
+        <%})%>
+    </ul>
+    </main>
+    <footer>
+        <% include ./partials/footer %>
+    </footer>
+    <% include ./partials/script_foot %>
+
+</body>
+
+</html>

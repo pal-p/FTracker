@@ -1,0 +1,27 @@
+{
+  "name": "FTracker",
+  "version": "1.0.0",
+  "description": "Financial Tracker",
+  "main": "index.js",
+  "scripts": {
+    "dev": "set NODE_ENV=development && nodemon server.js"
+  },
+  "author": { "name" : "Xyli0"
+    , "email" : "xyli0dev.dev@gmail.com"
+    },
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.3",
+    "cookies": "^0.7.2",
+    "dotenv": "^6.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.6"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4"
+  }
+}
