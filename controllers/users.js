@@ -3,7 +3,7 @@ const User = require("../models/users");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Cookies = require("cookies");
-const connUri = process.env.MONGO_LOCAL_CONN_URL;
+
 module.exports = {
   add: (req, res) => {
     let result = {};
@@ -81,16 +81,20 @@ module.exports = {
   },
   getDashboard: (req, res) => {
     if (req.user._id === req.params.id) {
-      User.findById({ _id: req.user._id }, (err, user) => {
-        cleanedUser = {
-          _id: user._id,
-          username: user.username,
-          accounts: user.accounts
-        };
-        res.render("dashboard", { user: cleanedUser });
-      });
-    } else {
-      res.status(500).send("Error no user Id");
+      User.findById( req.user._id ).populate("accounts").exec((err, user) => {
+        if(err){
+          res.status(500).send(err)
+        }else{
+          let cleanedUser = {
+            _id: user._id,
+            username: user.username,
+            accounts: user.accounts
+          };
+          res.render("dashboard", { user: cleanedUser });
+        }
+      })
+    }else{
+      res.status(401).send('Unhautorized')
     }
-  }
-};
+  } 
+}

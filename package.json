@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "set NODE_ENV=development && nodemon server.js"
   },
-  "author": { "name" : "Xyli0"
-    , "email" : "xyli0dev.dev@gmail.com"
-    },
+  "author": {
+    "name": "Xyli0",
+    "email": "xyli0dev.dev@gmail.com"
+  },
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^1.0.3",

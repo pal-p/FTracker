@@ -31,7 +31,7 @@ const userSchema = new Schema({
   accounts: [
     {
        type: mongoose.Schema.Types.ObjectId,
-       ref: "Account"
+       ref: "Account",
     }
 ]
 });

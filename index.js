@@ -12,6 +12,7 @@ const environment = process.env.NODE_ENV; // development
 const stage = require('./config')[environment.trim()];
 const connUri = process.env.MONGO_LOCAL_CONN_URL;
 const userRoutes = require('./routes/user');
+const accountRoutes = require('./routes/account');
 const indexRoutes = require('./routes/index');
 const httpServer = http.createServer(Cookies.express());
 
@@ -32,6 +33,7 @@ if (environment !== 'production') {
 }
 //Routes 
 app.use('/user', userRoutes);
+app.use('/account', accountRoutes);
 app.use('/', indexRoutes);
 
 //Server starts listening
