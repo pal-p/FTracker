@@ -4,7 +4,7 @@ Manage your expenses, set goals, save money ... while having fun
   
 Everybody is welcome! Let's have fun coding together.  
 
-#Run the app:  
+# Run the app:  
 npm install  
   
 You will need to make a .env file, copy the content env.example and set your own variables.  
