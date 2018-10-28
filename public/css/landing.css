@@ -1,15 +1,4 @@
-/* Box-sizing reset */
-html {
-  box-sizing: border-box;
-  
-}
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-/* Utilities */
 
 .hero_section {
   height: 100vh;
