@@ -34,6 +34,13 @@ const userSchema = new Schema({
        ref: "Account",
     }
 ]
+, 
+  jars: [
+    {
+       type: mongoose.Schema.Types.ObjectId,
+       ref: "Jar",
+    }
+]
 });
 
 // encrypt password before save

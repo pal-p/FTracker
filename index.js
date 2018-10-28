@@ -14,6 +14,7 @@ const connUri = process.env.MONGO_LOCAL_CONN_URL;
 const userRoutes = require('./routes/user');
 const accountRoutes = require('./routes/account');
 const indexRoutes = require('./routes/index');
+const jarRoutes = require('./routes/jar');
 const httpServer = http.createServer(Cookies.express());
 
 //connect database
@@ -32,8 +33,10 @@ if (environment !== 'production') {
   app.use(logger('dev'));
 }
 //Routes 
-app.use('/user', userRoutes);
 app.use('/account', accountRoutes);
+app.use('/user', userRoutes);
+app.use('/jar', jarRoutes);
+
 app.use('/', indexRoutes);
 
 //Server starts listening
