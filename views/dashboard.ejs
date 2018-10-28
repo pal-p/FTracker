@@ -14,28 +14,57 @@
     <main role="main" class="main">
         <h1>Dashboard</h1>
         <h2><%=user.username%></h2>
-        <ul>
-                <%if(user.accounts.length === 0){%>
-                    <li>No account yet</li>
-                    <%}else{%>
-
-        <%user.accounts.forEach((account)=>{%>
-            <li><%=account.name%>:<%=account.total_amount%></li>
-        <%})%>
-        <%}%>
-    </ul>
-    <h4>New account</h4>
+        
+    <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                  <h2>My accounts</h2>
+                    <ul>
+                        <%if(user.accounts.length === 0){%>
+                            <li>No account yet</li>
+                        <%}else{%>
+                            <%user.accounts.forEach((account)=>{%>
+                            <li><%=account.name%>:<%=account.total_amount%></li>
+                    <%})%>
+                    <%}%>
+                </ul>
+                <h4>New account</h4>
     <form class="form-inline" action="/account/new" method='POST'>
         <div class="form-group">
-            <label for="name">Name</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Name">
         </div>
         <div class="form-group">
-            <label for="amount">Amount</label>
-            <input type="number" class="form-control" id="amount" name="total_amount">
+            <input type="number" class="form-control" id="amount" name="total_amount" placeholder="Amount">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>>
+    </form>
+              </div>
+              <div class="col-sm">
+                    <h2>My saving jars</h2>
+    
+                    <table class="table table-striped jar-table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Goal</th>
+                            <th scope="col">%</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">test</th>
+                                <td>100</td>
+                                <td>1000</td>
+                                <td>10%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+              </div>
+            </div>
+          </div>
+    
+    
     </main>
     <footer>
         <% include ./partials/footer %>
