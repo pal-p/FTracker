@@ -1,0 +1,10 @@
+.dashboard__title--main{
+    margin-bottom: 4rem;
+}
+.dashboard__title--sub{
+    font-size: 1.3rem;
+}
+
+.dashboard__box{
+    border: 1px solid black;
+}

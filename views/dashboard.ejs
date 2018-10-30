@@ -7,23 +7,13 @@
 </head>
 
 <body>
-
-
-
-
     <main role="main" class="main">
         <% include ./partials/navbar %>
-
-
-
-        <div class="dashboard container">
-            <h1>Dashboard</h1>
-            <h2>
-                <%=user.username%>
-            </h2>
+        <div class="dashboard container content">
+            <h1 class="dashboard__title--main">Dashboard</h1>
             <div class="row">
-                <div class="col-sm">
-                    <h2>My accounts</h2>
+                <div class="col-sm dashboard__box">
+                    <h3 class="dashboard__title--sub">My accounts</h3>
                     <ul>
                         <%if(user.accounts.length === 0){%>
                         <li>No account yet</li>
@@ -38,18 +28,17 @@
                     </ul>
                     <h4>New account</h4>
                     <form class="form-inline" action="/account/new" method='POST'>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                        <div class="form-group form-group-sm">
+                            <input type="text" class="form-control-sm" id="name" name="name" placeholder="Name">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" id="amount" name="total_amount" placeholder="Amount">
+                            <input type="number" class="form-control-sm" id="amount" name="total_amount" placeholder="Amount">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></button>
                     </form>
                 </div>
-                <div class="col-sm">
-                    <h2>My saving jars</h2>
-
+                <div class="col-sm dashboard__box">
+                    <h3 class="dashboard__title--sub">My saving jars</h3>
                     <table class="table table-striped jar-table">
                         <thead>
                             <tr>
@@ -71,9 +60,7 @@
                 </div>
             </div>
         </div>
-<footer>
         <% include ./partials/footer %>
-    </footer>
     </main>
 
 
