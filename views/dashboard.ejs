@@ -9,56 +9,91 @@
 <body>
     <main role="main" class="main">
         <% include ./partials/navbar %>
-        <div class="dashboard container content">
+        <div class="container-fluid">
             <h1 class="dashboard__title--main">Dashboard</h1>
-            <div class="row">
-                <div class="col-sm dashboard__box">
-                    <h3 class="dashboard__title--sub">My accounts</h3>
-                    <ul>
-                        <%if(user.accounts.length === 0){%>
-                        <li>No account yet</li>
-                        <%}else{%>
-                        <%user.accounts.forEach((account)=>{%>
-                        <li>
-                            <%=account.name%>:
-                            <%=account.total_amount%>
-                        </li>
-                        <%})%>
-                        <%}%>
-                    </ul>
-                    <h4>New account</h4>
-                    <form class="form-inline" action="/account/new" method='POST'>
-                        <div class="form-group form-group-sm">
-                            <input type="text" class="form-control-sm" id="name" name="name" placeholder="Name">
+            <div class="dashboard">
+                <ul class="nav flex-column nav-tabs dashboard__sidenav" id="myTab" role="tablist" >
+                    <li class="nav-item  dashboard__sidenav__nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true" href="#"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item dashboard__sidenav__nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                            aria-selected="false">Profile</a>
+                    </li>
+                    <li class="nav-item dashboard__sidenav__nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                            aria-selected="false">Contact</a>
+                    </li>
+                    <li class="nav-item dashboard__sidenav__nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+
+                <div class="dashboard__content">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h2>Your net worth:</h2>
                         </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control-sm" id="amount" name="total_amount" placeholder="Amount">
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <h1>Your accounts</h1>
+                            <h3 class="dashboard__title--sub">My accounts</h3>
+                            <ul>
+                                <%if(user.accounts.length === 0){%>
+                                <li>No account yet</li>
+                                <%}else{%>
+                                <%user.accounts.forEach((account)=>{%>
+                                <li>
+                                    <%=account.name%>:
+                                    <%=account.total_amount%>
+                                </li>
+                                <%})%>
+                                <%}%>
+                            </ul>
+                            <h4>New account</h4>
+                            <form class="form-inline" action="/account/new" method='POST'>
+                                <div class="form-group form-group-sm">
+                                    <input type="text" class="form-control-sm" id="name" name="name" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control-sm" id="amount" name="total_amount"
+                                        placeholder="Amount">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></button>
+                            </form>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></button>
-                    </form>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <h4>Your Jars</h4>
+                            <h3 class="dashboard__title--sub">My saving jars</h3>
+                            <table class="table table-striped jar-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Goal</th>
+                                        <th scope="col">%</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">test</th>
+                                        <td>100</td>
+                                        <td>1000</td>
+                                        <td>10%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
                 </div>
-                <div class="col-sm dashboard__box">
-                    <h3 class="dashboard__title--sub">My saving jars</h3>
-                    <table class="table table-striped jar-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col">Goal</th>
-                                <th scope="col">%</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">test</th>
-                                <td>100</td>
-                                <td>1000</td>
-                                <td>10%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+
+
+
+
             </div>
+        </div>
         </div>
         <% include ./partials/footer %>
     </main>
