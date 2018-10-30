@@ -1,6 +1,7 @@
 /* Box-sizing reset */
 html {
     box-sizing: border-box;
+    padding-bottom: 0 ;
   }
   
   *,
@@ -8,17 +9,24 @@ html {
   *:after {
     box-sizing: inherit;
   }
-  
-body{
-    display: flex;
+
+  .bg-color-blue{
+    background-color: #00c1ff;
+  }
+  .bg-color-blue-light{
+    background-color:rgba(0, 193, 255, 0.7)
+  }
+  .main {
+    display:flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-}
-  .main{
-    padding-top: 4rem;
-}
+    padding-bottom: 0;
+  }
 
-footer {
-    background: grey;
+  .content{
+    min-height: 40rem;
+  }
+footer{
+  min-height: 10rem;
 }

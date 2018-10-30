@@ -1,10 +1,18 @@
-
-
+.main{
+  background: linear-gradient(to right bottom, #02c1ff, #0270ff)
+}
+.navbar-custom.brand{
+  color: #FFF;
+  font-family: 'Pacifico', cursive;
+}
 .hero_section {
   height: 100vh;
   position: relative;
+  color: #FFF;
 }
-
+.hero_section a{
+color: #FFF
+}
 .hero {
   position: absolute;
   text-align: center;
@@ -18,9 +26,16 @@
 }
 
 .hero__title {
-  font-size: 5rem;
+  font-size: 6rem;
   margin-bottom: 4rem;
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
 }
 .hero__lead {
   font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.hero__link--signup {
+  text-transform: uppercase;
 }

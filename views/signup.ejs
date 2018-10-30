@@ -7,11 +7,10 @@
 </head>
 
 <body>
-    <header>
-        <% include ./partials/header %>
-    </header>
+        
 
-    <main role="main" class="main">
+    <main role="main" class="main container-flex">
+            <% include ./partials/navbar %>
         <div class="register-panel container">
             <div class="row">
                 <div class="col-sm">
@@ -48,10 +47,11 @@
                 </div>
             </div>
         </div>
+        <footer>
+                <% include ./partials/footer %>
+            </footer> 
     </main>
-    <footer>
-        <% include ./partials/footer %>
-    </footer>
+    
     <% include ./partials/script_foot %>
 
 </body>
