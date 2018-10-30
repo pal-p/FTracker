@@ -1,6 +1,7 @@
 /* Box-sizing reset */
 html {
     box-sizing: border-box;
+    padding-bottom: 0 ;
   }
   
   *,
@@ -8,25 +9,20 @@ html {
   *:after {
     box-sizing: inherit;
   }
-/* Change navbar color to blue */
-  .navbar-custom {                              
+
+  .bg-color-blue{
     background-color: #00c1ff;
-}
-/* change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: rgba(255,255,255,.8);
-}
-/* change the link color */
-.navbar-custom .navbar-nav .nav-link {
-    color: rgba(255,255,255,.5);
-}
-/* change the color of active or hovered links */
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-    color: #ffffff;
-}
-  
-footer {
-    background: grey;
+  }
+  .bg-color-blue-light{
+    background-color:rgba(0, 193, 255, 0.7)
+  }
+  .main {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+footer .navbar{
+  margin: 0;
+  min-height: 10rem;
 }
