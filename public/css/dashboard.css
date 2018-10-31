@@ -11,7 +11,7 @@
     font-size: 1.3rem;
 }
 .dashboard__content{
-    width: 100%;
+    
 }
 
 .dashboard__sidenav{
@@ -35,3 +35,66 @@
     
     
 }
+
+/* ++++++++++++++++++++++++DASHBOARD ++++++++++++++++++++++++++*/
+.frame {
+    padding-top: 3rem;
+  }
+  
+  .dashboard {
+    border: 1px solid black;
+    height: 30rem;
+    border-radius: 3px;
+    list-style: none;
+  }
+  .dashboard__sidebar {
+    padding: 0;
+    background: red;
+  }
+  .dashboard__sidebar__link {
+    flex-grow:1;
+    border: 1px solid lightGrey;
+    
+  }
+  .dashboard__sidebar__link-box {
+    
+    border: 1px solid red;
+    flex-grow:1;
+    align-self: stretch;
+  }
+    .dashboard__content {
+    width: 100%;
+    padding: 2rem 3rem;
+      }
+  .dashboard__account-list {
+    background: white;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+  .dashboard__account-list__row {
+    min-height: 3rem;
+  }
+  .dashboard__account-list__row__header {
+    background: grey;
+    color: #fff;
+  }
+  .dashboard__account-list__row--account {
+    border: 1px solid;
+    border-radius: 3px;
+  }
+  .dashboard__account-list__row__item {
+    padding: 0.5rem;
+  }
+  .dashboard__account-list__row__item--name {
+    font-weight: bold;
+  }
+  .dashboard__account-list__row__item--total {
+    min-width: 6rem;
+  }
+  .dashboard__account-list__row--footer {
+    background: white;
+  }
+  .dashboard__new-account__btn {
+    float: right;
+  }
+  

@@ -9,90 +9,47 @@
 <body>
     <main role="main" class="main">
         <% include ./partials/navbar %>
-        <div class="container-fluid">
+        <div class="container">
             <h1 class="dashboard__title--main">Dashboard</h1>
-            <div class="dashboard">
-                <ul class="nav flex-column nav-tabs dashboard__sidenav" id="myTab" role="tablist" >
-                    <li class="nav-item  dashboard__sidenav__nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                            aria-controls="home" aria-selected="true" href="#"><i class="fas fa-home"></i></a>
+            <div class="dashboard d-flex flex-column flex-lg-row">
+                <ul class="dashboard__sidebar nav navbar bg-dark navbar-dark flex-row flex-lg-column justify-content-around" id="myTab"
+                    role="tablist">
+                    <li class="dashboard__sidebar__link-box d-flex flex-column flex-row justify-content-center nav-item">
+                        <a class="dashboard__sidebar__link nav-link active text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="home-tab" data-toggle="tab"
+                            href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                     </li>
-                    <li class="nav-item dashboard__sidenav__nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                            aria-selected="false">Profile</a>
+                    <li class="dashboard__sidebar__link-box d-flex flex-column flex-row justify-content-center nav-item">
+                        <a class="dashboard__sidebar__link nav-link text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="accounts-tab" data-toggle="tab"
+                            href="#accounts" role="tab" aria-controls="accounts" aria-selected="false">Accounts</a>
                     </li>
-                    <li class="nav-item dashboard__sidenav__nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                            aria-selected="false">Contact</a>
-                    </li>
-                    <li class="nav-item dashboard__sidenav__nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                    <li class="dashboard__sidebar__link-box d-flex flex-column flex-row justify-content-center nav-item">
+                        <a class="dashboard__sidebar__link nav-link text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="contact-tab" data-toggle="tab" href="#contact"
+                            role="tab" aria-controls="contact" aria-selected="false">Goals</a>
                     </li>
                 </ul>
-
-                <div class="dashboard__content">
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h2>Your net worth:</h2>
-                        </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <h1>Your accounts</h1>
-                            <h3 class="dashboard__title--sub">My accounts</h3>
-                            <ul>
-                                <%if(user.accounts.length === 0){%>
-                                <li>No account yet</li>
-                                <%}else{%>
-                                <%user.accounts.forEach((account)=>{%>
-                                <li>
-                                    <%=account.name%>:
-                                    <%=account.total_amount%>
-                                </li>
-                                <%})%>
-                                <%}%>
-                            </ul>
-                            <h4>New account</h4>
-                            <form class="form-inline" action="/account/new" method='POST'>
-                                <div class="form-group form-group-sm">
-                                    <input type="text" class="form-control-sm" id="name" name="name" placeholder="Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="number" class="form-control-sm" id="amount" name="total_amount"
-                                        placeholder="Amount">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></button>
-                            </form>
-                        </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <h4>Your Jars</h4>
-                            <h3 class="dashboard__title--sub">My saving jars</h3>
-                            <table class="table table-striped jar-table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Amount</th>
-                                        <th scope="col">Goal</th>
-                                        <th scope="col">%</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">test</th>
-                                        <td>100</td>
-                                        <td>1000</td>
-                                        <td>10%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <div class="dashboard__content tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        Home
                     </div>
-
-
+                    <div class="tab-pane fade" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
+                        <% include ./partials/dashboard_tabs/accounts %>
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape
+                        wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny
+                        pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer,
+                        iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy
+                        irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free,
+                        carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably
+                        haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth
+                        chambray yr.</div>
                 </div>
 
 
-
-
             </div>
+
+
+        </div>
+
         </div>
         </div>
         <% include ./partials/footer %>
