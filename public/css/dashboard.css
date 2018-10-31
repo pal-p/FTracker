@@ -49,18 +49,25 @@
   }
   .dashboard__sidebar {
     padding: 0;
-    background: red;
+    
   }
   .dashboard__sidebar__link {
     flex-grow:1;
-    border: 1px solid lightGrey;
+    
+    
+  }
+  .dashboard__sidebar__link.active{
+    background: grey;
+    
     
   }
   .dashboard__sidebar__link-box {
-    
-    border: 1px solid red;
     flex-grow:1;
     align-self: stretch;
+  }
+  
+  .dashboard__sidebar__link-box:hover {
+    background: rgb(104, 103, 103);
   }
     .dashboard__content {
     width: 100%;
@@ -97,4 +104,5 @@
   .dashboard__new-account__btn {
     float: right;
   }
+  
   
