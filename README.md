@@ -7,6 +7,14 @@ Everybody is welcome to contribute! Let's have fun coding together.
 
 Plese use the BEM notation for your css http://getbem.com/introduction/ 
 
+# Concept  
+-A budget tracker where you add and track accounts  
+-You can set goals let's say a holiday trip you want to save money for, you can set a money JAR and put $&& from your different accounts inside  
+-Some automatic saving function where you set up a date each month, which account you want to take money from and which amount and it automatically save it in the jar you want  
+-Ask me anything and feel free to request functionalities. I really want to do some teamwork on this project  
+  
+
+
 # Run the app:  
 npm install 
 
