@@ -81,14 +81,15 @@ module.exports = {
   },
   getDashboard: (req, res) => {
     if (req.user._id === req.params.id) {
-      User.findById( req.user._id ).populate("accounts").exec((err, user) => {
+      User.findById( req.user._id ).populate("accounts").populate("jars").exec((err, user) => {
         if(err){
           res.status(500).send(err)
         }else{
           let cleanedUser = {
             _id: user._id,
             username: user.username,
-            accounts: user.accounts
+            accounts: user.accounts,
+            savings: user.jars
           };
           res.render("dashboard", { user: cleanedUser });
         }
