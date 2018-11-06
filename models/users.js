@@ -35,10 +35,10 @@ const userSchema = new Schema({
     }
 ]
 , 
-  jars: [
+  savingss: [
     {
        type: mongoose.Schema.Types.ObjectId,
-       ref: "Jar",
+       ref: "Saving",
     }
 ]
 });

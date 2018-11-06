@@ -1,5 +1,5 @@
 const express = require("express");
-const controller = require("../controllers/jars");
+const controller = require("../controllers/savings");
 const validateToken = require("../utils").validateToken; //middleware to verify token
 const router = express.Router();
 

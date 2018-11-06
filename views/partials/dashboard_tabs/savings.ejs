@@ -1,40 +1,38 @@
 <div class="dashboard__account-list d-flex flex-column flex-wrap">
-        <h2 class="mb-3">Savings</h2>
-          <div class="dashboard__savings-list__content">
-                <%if(user.savings !== 'undefined'){%>
-                <%if(user.savings.length > 0){%>
-                <%user.savings.forEach(function(saving){ %>
-                  <div class="dashboard__savings-list__row dashboard__savings-list__row--savings d-flex flex-wrap justify-content-between align-items-center">
-                      <li class="dashboard__savings-list__row__item dashboard__savings-list__row__item--name flex-fill">
-                          <%=saving.name%>
-                        </li>
-                        <li class="dashboard__savings-list__row__item dashboard__savings-list__row__item--total">
-                          <%if(saving.total_amount > 0){%>
-                          +
-                          <%}else{%>
-                            -
-                            <%}%>
-                          <%=saving.total_amount%>
-                        </li>
-                        <li class="dashboard__savings-list__row__item dashboard__savings-list__row__item--delete">
-                          <form action="/savings/<%=jar._id%>/delete" method="POST">
-                          <button type="submit" class="btn btn-danger">
-                            <i class="fa fa-times"></i>
-                          </button>
-                        </form>
-                        </li>
-                      </div>
-              <% }) %>
-              <% }else {%>
-                            <% } %>
-              
-                <div class="dashboard__savings-list__row dashboard__savings-list__row--savings d-flex flex-wrap justify-content-between align-items-center">
-                    No savings to show
-                    </div>
-             <% } %>
-              
-          </div>
-        </div>
-        <div class="dashboard__new-savings">
-          <button class="dashboard__new-savings__btn btn btn-success btn--create">Create</button>
-        </div>
+  <h2 class="mb-3">Savings</h2>
+  <div class="dashboard__savings-list__content">
+    <%if(typeof(user.savings) !== 'undefined' && user.savings.length > 0 ){%>
+
+    <%user.savings.forEach(function(saving_account){ %>
+    <div class="dashboard__savings-list__row dashboard__savings-list__row--savings d-flex flex-wrap justify-content-between align-items-center">
+      <li class="dashboard__savings-list__row__item dashboard__savings-list__row__item--name flex-fill">
+        <%=saving_account.name%>
+      </li>
+      <li class="dashboard__savings-list__row__item dashboard__savings-list__row__item--total">
+        <%if(saving_account.total_amount > 0){%>
+        +
+        <%}else{%>
+        -
+        <%}%>
+        <%=saving_account.total_amount%>
+      </li>
+      <li class="dashboard__savings-list__row__item dashboard__savings-list__row__item--delete">
+        <form action="/savings/<%=saving_account._id%>/delete" method="POST">
+          <button type="submit" class="btn btn-danger">
+            <i class="fa fa-times"></i>
+          </button>
+        </form>
+      </li>
+    </div>
+    <% }) %>
+    <% }else {%>
+    <div class="dashboard__savings-list__row dashboard__savings-list__row--savings d-flex flex-wrap justify-content-between align-items-center">
+      No savings to show
+    </div>
+    <% } %>
+
+  </div>
+</div>
+<div class="dashboard__new-savings">
+  <button class="dashboard__new-savings__btn btn btn-success btn--create">New Goal</button>
+</div>

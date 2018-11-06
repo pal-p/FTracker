@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
-const jarSchema = new Schema({
+const savingSchema = new Schema({
   name: { type: String, required: true, unique: true, trim: true },
   total_amount: { type: Number, default: 0 },
   goal: {type: Number, min: 0.01},
@@ -15,4 +15,4 @@ const jarSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model("Jar", jarSchema);
+module.exports = mongoose.model("Saving", savingSchema);
