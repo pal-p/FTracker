@@ -10,39 +10,34 @@
 <body>
     <main role="main" class="main">
         <% include ./partials/navbar %>
-        <div class="container">
-            <h1 class="dashboard__title--main">Dashboard</h1>
+        <div class="container mb-5">
+            <h1 class="dashboard__title--main mb-4">Dashboard</h1>
             <div class="dashboard d-flex flex-column flex-lg-row">
-                <ul class="dashboard__sidebar nav navbar bg-dark navbar-dark flex-row flex-lg-column justify-content-around" id="myTab"
+                <ul class="dashboard__sidebar nav bg-dark flex-row flex-lg-column justify-content-around" id="myTab"
                     role="tablist">
-                    <li class="dashboard__sidebar__link-box d-flex flex-column flex-row justify-content-center nav-item">
+                    <li class="dashboard__sidebar__link-box col d-flex flex-column flex-row justify-content-center nav-item">
                         <a class="dashboard__sidebar__link nav-link active text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="home-tab" data-toggle="tab"
                             href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                     </li>
-                    <li class="dashboard__sidebar__link-box d-flex flex-column flex-row justify-content-center nav-item">
+                    <li class="dashboard__sidebar__link-box col d-flex flex-column flex-row justify-content-center nav-item">
                         <a class="dashboard__sidebar__link nav-link text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="accounts-tab" data-toggle="tab"
                             href="#accounts" role="tab" aria-controls="accounts" aria-selected="false">Accounts</a>
                     </li>
-                    <li class="dashboard__sidebar__link-box d-flex flex-column flex-row justify-content-center nav-item">
-                        <a class="dashboard__sidebar__link nav-link text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="contact-tab" data-toggle="tab" href="#contact"
-                            role="tab" aria-controls="contact" aria-selected="false">Goals</a>
+                    <li class="dashboard__sidebar__link-box col d-flex flex-column flex-row justify-content-center nav-item">
+                        <a class="dashboard__sidebar__link nav-link text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="contact-tab" data-toggle="tab" href="#savings"
+                            role="tab" aria-controls="savings" aria-selected="false">Savings</a>
                     </li>
                 </ul>
                 <div class="dashboard__content tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        Home
+                            <% include ./partials/dashboard_tabs/home %>
                     </div>
                     <div class="tab-pane fade" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
                         <% include ./partials/dashboard_tabs/accounts %>
                     </div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape
-                        wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny
-                        pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer,
-                        iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy
-                        irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free,
-                        carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably
-                        haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth
-                        chambray yr.</div>
+                    <div class="tab-pane fade" id="savings" role="tabpanel" aria-labelledby="savings-tab">
+                            <% include ./partials/dashboard_tabs/savings %>
+                    </div>
                 </div>
 
 

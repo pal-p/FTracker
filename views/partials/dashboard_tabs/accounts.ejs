@@ -1,25 +1,40 @@
-
+<div class="dashboard__account-list d-flex flex-column flex-wrap">
+<h2>My accounts</h2>
+  <div class="dashboard__account-list__content">
     
-  
-        <div class="dashboard__account-list d-flex flex-column flex-wrap">
-  
-          <div class="dashboard__account-list__content">
-            <div class="dashboard__account-list__row dashboard__account-list__row--account d-flex flex-wrap justify-content-between align-items-center">
+      <%if(user.accounts !== 'undefined'){%>
+        <%if(user.accounts.length > 0){%>
+        <%user.accounts.forEach(function(account){ %>
+          <div class="dashboard__account-list__row dashboard__account-list__row--account d-flex flex-wrap justify-content-between align-items-center">
               <li class="dashboard__account-list__row__item dashboard__account-list__row__item--name flex-fill">
-                My first account
-              </li>
-              <li class="dashboard__account-list__row__item dashboard__account-list__row__item--total">
-                +1345$
-              </li>
-              <li class="dashboard__account-list__row__item dashboard__account-list__row__item--actions">
-                <button class="btn btn-danger">
-                <i class="fa fa-times"></i>
-             </button>
-              </li>
+                  <%=account.name%>
+                </li>
+                <li class="dashboard__account-list__row__item dashboard__account-list__row__item--total">
+                  <%if(account.total_amount > 0){%>
+                  +
+                  <%}else{%>
+                    -
+                    <%}%>
+                  <%=account.total_amount%>
+                </li>
+                <li class="dashboard__account-list__row__item dashboard__account-list__row__item--delete">
+                  <form action="/account/<%=account._id%>/delete" method="POST">
+                  <button type="submit" class="btn btn-danger">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </form>
+                </li>
+              </div>
+      <% }) %>
+                    <% } %>
+      <% }else {%>
+        <div class="dashboard__account-list__row dashboard__account-list__row--account d-flex flex-wrap justify-content-between align-items-center">
+            No account to show
             </div>
-          </div>
-        </div>
-        <div class="dashboard__new-account">
-            <button class="dashboard__new-account__btn btn btn-success btn--create">Create</button>
-        </div>
-        
+     <% } %>
+      
+  </div>
+</div>
+<div class="dashboard__new-account">
+  <button class="dashboard__new-account__btn btn btn-success btn--create">Create</button>
+</div>

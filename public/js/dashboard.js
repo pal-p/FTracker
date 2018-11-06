@@ -1,5 +1,4 @@
-document.onload(function() {
-    
+document.onload = function() {
   const clearTabs = function() {
     nav.forEach(function(item) {
       item.classList.remove("active");
@@ -12,5 +11,4 @@ document.onload(function() {
       this.classList.toggle("active");
     });
   });
-  
-});
+};
