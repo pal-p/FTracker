@@ -1,83 +1,65 @@
-body{
+body {
   margin: 0;
 }
-.dashboard{
-    display: flex;
-    height: 30rem;
-    border: 1px solid black;
-}
 
-.dashboard__title--sub{
-    font-size: 1.3rem;
+.dashboard__title--sub {
+  font-size: 1.3rem;
 }
 
 /* ++++++++++++++++++++++++DASHBOARD ++++++++++++++++++++++++++*/
-.frame {
-    padding-top: 3rem;
-  }
-  
-  .dashboard {
-    border: 1px solid black;
-    height: 30rem;
-    border-radius: 3px;
-    list-style: none;
-  }
-  .dashboard__sidebar {
-    padding: 0;
-    flex-grow:1
-  }
-  .dashboard__sidebar__link {
-    flex-grow:1;
-    
-    
-  }
-  .dashboard__sidebar__link.active{
-    background: grey;
-    
-    
-  }
-  .dashboard__sidebar__link-box {
-    padding: 0;
-  }
-  
-  .dashboard__sidebar__link-box:hover {
-    background: rgb(85, 85, 85);
-  }
-    .dashboard__content {
-    padding: 2rem 3rem;
-    flex-basis: 85%;
-      }
-  .dashboard__account-list {
-    border-radius: 3px;
-    margin-bottom: 1rem;
-  }
-  .dashboard__account-list__row {
-    min-height: 3rem;
-    margin-bottom: 0.5rem;
 
-  }
-  .dashboard__account-list__row__header {
-    background: grey;
-    color: #fff;
-  }
-  .dashboard__account-list__row--account {
-    border: 1px solid;
-    border-radius: 3px;
-  }
-  .dashboard__account-list__row__item {
-    padding: 0.5rem;
-  }
-  .dashboard__account-list__row__item--name {
-    font-weight: bold;
-  }
-  .dashboard__account-list__row__item--total {
-    min-width: 6rem;
-  }
-  .dashboard__account-list__row--footer {
-    background: white;
-  }
-  .dashboard__new-account__btn {
-    float: right;
-  }
-  
-  
+.dashboard {
+  border: 1px solid black;
+  height: 30rem;
+  border-radius: 3px;
+  list-style: none;
+}
+.dashboard__sidebar {
+  padding: 0;
+}
+
+.dashboard__sidebar__link.active {
+  background: grey;
+}
+.dashboard__sidebar__link-box {
+  padding: 0;
+}
+
+.dashboard__sidebar__link-box:hover {
+  background: rgb(85, 85, 85);
+}
+.dashboard__content {
+  padding: 2rem 3rem;
+  flex-basis: 85%;
+}
+.dashboard__account-list {
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+.dashboard__account-list__row {
+  min-height: 3rem;
+  margin-bottom: 0.5rem;
+}
+.dashboard__account-list__row__header {
+  background: grey;
+  color: #fff;
+}
+.dashboard__account-list__row--account {
+  border: 1px solid;
+  border-radius: 3px;
+}
+.dashboard__account-list__row__item {
+  padding: 0.5rem;
+}
+.dashboard__account-list__row__item--name {
+  font-weight: bold;
+}
+.dashboard__account-list__row__item--total {
+  min-width: 6rem;
+}
+.dashboard__account-list__row--footer {
+  background: white;
+}
+.dashboard__new-account__btn {
+  float: right;
+}
