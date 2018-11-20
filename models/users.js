@@ -66,12 +66,12 @@ userSchema.pre("save", function(next) {
   }
 });
 
-userSchema.methods.verifyPassword = (password) => {
+userSchema.methods.verifyPassword = function(password, callback){
   bcrypt.compare(password, this.password, (err, isMatch)=>{
     if(err){
-      return err
+      callback(err, null)
     }
-    return isMatch
+    callback(null, isMatch)
   });
   
 }
