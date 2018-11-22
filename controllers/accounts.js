@@ -25,5 +25,9 @@ module.exports = {
       name:name,
       total_amount:total_amount
     }); 
+    },
+    getNew: (req, res)=>{
+        res.render('account_create')
     }
+
 }

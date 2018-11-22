@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 const savingSchema = new Schema({
-  name: { type: String, required: true, unique: true, trim: true },
+  name: { type: String, required: true, trim: true },
   total_amount: { type: Number, default: 0 },
   goal: {type: Number, min: 0.01},
   createdAt: { type: Date, default: Date.now },
