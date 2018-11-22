@@ -1,15 +1,15 @@
-<div class="dashboard__account-list d-flex flex-column flex-wrap">
+<div class="dashboard__account-list d-flex flex-column flex-wrap rounded">
 <h2 class="mb-3">My Accounts</h2>
   <div class="dashboard__account-list__content">
     
       <%if(user.accounts !== 'undefined'){%>
         <%if(user.accounts.length > 0){%>
         <%user.accounts.forEach(function(account){ %>
-          <div class="dashboard__account-list__row dashboard__account-list__row--account d-flex flex-wrap justify-content-between align-items-center">
-              <li class="dashboard__account-list__row__item dashboard__account-list__row__item--name flex-fill">
+          <div class="dashboard__account-list__row dashboard__account-list__row--account d-flex flex-wrap justify-content-between align-items-center mb-1 border rounded">
+              <li class="dashboard__account-list__row__item p-1 dashboard__account-list__row__item--name flex-fill font-weight-bold">
                   <%=account.name%>
                 </li>
-                <li class="dashboard__account-list__row__item dashboard__account-list__row__item--total">
+                <li class="dashboard__account-list__row__item p-1 dashboard__account-list__row__item--total">
                   <%if(account.total_amount > 0){%>
                   +
                   <%}else{%>
@@ -17,7 +17,7 @@
                     <%}%>
                   <%=account.total_amount%>
                 </li>
-                <li class="dashboard__account-list__row__item dashboard__account-list__row__item--delete">
+                <li class="dashboard__account-list__row__item p-1 dashboard__account-list__row__item--delete">
                   <form action="/account/<%=account._id%>/delete" method="POST">
                   <button type="submit" class="btn btn-danger">
                     <i class="fa fa-times"></i>

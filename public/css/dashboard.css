@@ -7,65 +7,40 @@ body {
 }
 
 /* ++++++++++++++++++++++++DASHBOARD ++++++++++++++++++++++++++*/
-
 .dashboard {
   border: 1px solid black;
   height: 30rem;
-  border-radius: 3px;
-  list-style: none;
-}
-.dashboard__sidebar {
-  padding: 0;
 }
 
 .dashboard__sidebar__link.active {
   background: grey;
 }
-.dashboard__sidebar__link-box {
-  padding: 0;
-}
 
 .dashboard__sidebar__link-box:hover {
   background: rgb(85, 85, 85);
 }
+
 .dashboard__content {
-  padding: 2rem 3rem;
   flex-basis: 85%;
 }
+
 /* Home Page */
 .net-worth{
-  padding-left: 0;
+  
   font-size: 1.5rem;
   
 }
-.net-worth__item{
-     list-style: none;
-     font-weight: 600;
-}
 
 /* Account Page */
-.dashboard__account-list {
-  border-radius: 3px;
-  margin-bottom: 1rem;
-}
+
 .dashboard__account-list__row {
   min-height: 3rem;
-  margin-bottom: 0.5rem;
 }
 .dashboard__account-list__row__header {
   background: grey;
   color: #fff;
 }
-.dashboard__account-list__row--account {
-  border: 1px solid;
-  border-radius: 3px;
-}
-.dashboard__account-list__row__item {
-  padding: 0.5rem;
-}
-.dashboard__account-list__row__item--name {
-  font-weight: bold;
-}
+
 .dashboard__account-list__row__item--total {
   min-width: 6rem;
 }
@@ -76,6 +51,18 @@ body {
   float: right;
 }
 
+/* SAVINGS */
+.dashboard__saving-list{
+  
+}
 
-
-
+.dashboard__saving-list__progress-bar{
+  height: 1.8rem;
+  width: 100%;
+}
+.dashboard__saving__list__progress-bar--inside{
+  background: blue;
+  width: 15%;
+  height: 100%;
+  color: #fff;
+}

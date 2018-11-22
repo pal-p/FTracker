@@ -7,15 +7,15 @@ module.exports = {
         User.findById(req.user._id)
         .then((user)=>{
             console.log('User found')
-            Saving.create({name:req.body.name, owner:{id:req.user._id}},(err, saving)=>{
+            Saving.create({name:req.body.name, owner:{id:req.user._id}, goal:req.body.goal},(err, saving)=>{
                 if(err){
                     res.status(500).send({error:err, message:'Can\'t create saving'});
                 }
                 console.log('saving created')
                 console.log(saving)
                 user.savings.push(saving)
-                saving.save();
-                res.redirect('/saving/' + saving._id);
+                user.save();
+                res.redirect('../user/' + user._id + '/dashboard');
             })
                })
         .catch((err)=>{
@@ -23,8 +23,8 @@ module.exports = {
         })
     }, 
     show: (req, res)=>{
-        Savings.findById(req.params.id)
-        .then((savinh)=>{
+        Saving.findById(req.params.id)
+        .then((saving)=>{
             //check if req.user is saving account owner
                 if(String(saving.owner.id) === req.user._id){
                 console.log('saving owner match')

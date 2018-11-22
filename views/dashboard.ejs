@@ -12,23 +12,23 @@
         <% include ./partials/navbar %>
         <div class="container mb-5">
             <h1 class="dashboard__title--main mb-4">Dashboard</h1>
-            <div class="dashboard d-flex flex-column flex-lg-row">
-                <ul class="dashboard__sidebar nav bg-dark col flex-row flex-lg-column justify-content-around" id="myTab"
+            <div class="dashboard d-flex flex-column flex-lg-row rounded">
+                <ul class="dashboard__sidebar nav bg-dark col flex-row flex-lg-column justify-content-around p-0" id="myTab"
                     role="tablist">
                     <li class="dashboard__sidebar__link-box p-0 col d-flex flex-column flex-row justify-content-center nav-item">
                         <a class="dashboard__sidebar__link col nav-link active text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="home-tab" data-toggle="tab"
                             href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                     </li>
-                    <li class="dashboard__sidebar__link-box col d-flex flex-column flex-row justify-content-center nav-item">
+                    <li class="dashboard__sidebar__link-box p-0 col d-flex flex-column flex-row justify-content-center nav-item">
                         <a class="dashboard__sidebar__link col nav-link text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="accounts-tab" data-toggle="tab"
                             href="#accounts" role="tab" aria-controls="accounts" aria-selected="false">Accounts</a>
                     </li>
-                    <li class="dashboard__sidebar__link-box col d-flex flex-column flex-row justify-content-center nav-item">
+                    <li class="dashboard__sidebar__link-box p-0 col d-flex flex-column flex-row justify-content-center nav-item">
                         <a class="dashboard__sidebar__link col nav-link text-white d-flex flex-row flex-lg-column justify-content-center align-items-center" id="contact-tab" data-toggle="tab" href="#savings"
                             role="tab" aria-controls="savings" aria-selected="false">Savings</a>
                     </li>
                 </ul>
-                <div class="dashboard__content tab-content" id="myTabContent">
+                <div class="dashboard__content tab-content p-5" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <% include ./partials/dashboard_tabs/home %>
                     </div>

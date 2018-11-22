@@ -1,38 +1,64 @@
-<div class="dashboard__account-list d-flex flex-column flex-wrap">
+<div class="dashboard__saving-list d-flex flex-column flex-wrap mb-4">
   <h2 class="mb-3">Savings</h2>
-  <div class="dashboard__savings-list__content">
+  <div class="dashboard__saving-list__content">
     <%if(typeof(user.savings) !== 'undefined' && user.savings.length > 0 ){%>
 
     <%user.savings.forEach(function(saving_account){ %>
-    <div class="dashboard__savings-list__row dashboard__savings-list__row--savings d-flex flex-wrap justify-content-between align-items-center">
-      <li class="dashboard__savings-list__row__item dashboard__savings-list__row__item--name flex-fill">
+    <div class="dashboard__saving-list__row dashboard__saving-list__row--saving d-flex flex-wrap justify-content-between align-items-center list-unstyled">
+      <li class="dashboard__saving-list__row__item dashboard__saving-list__row__item--name">
         <%=saving_account.name%>
       </li>
-      <li class="dashboard__savings-list__row__item dashboard__savings-list__row__item--total">
-        <%if(saving_account.total_amount > 0){%>
-        +
-        <%}else{%>
-        -
-        <%}%>
+      <li class="dashboard__saving-list__row__item dashboard__saving-list__row__item--total">
         <%=saving_account.total_amount%>
       </li>
-      <li class="dashboard__savings-list__row__item dashboard__savings-list__row__item--delete">
-        <form action="/savings/<%=saving_account._id%>/delete" method="POST">
+      <li class="dashboard__saving-list__row__item dashboard__saving-list__row__item--goal">
+        <%=saving_account.goal%>
+      </li>
+
+      <li class="dashboard__saving-list__row__item dashboard__saving-list__row__item--delete">
+        <form action="/saving/<%=saving_account._id%>/delete" method="POST">
           <button type="submit" class="btn btn-danger">
             <i class="fa fa-times"></i>
           </button>
         </form>
       </li>
+      <div class="dashboard__saving-list__row__item dashboard__saving-list__row__item--percent col-12">
+
+        <div class="dashboard__saving-list__progress-bar p-0 col-12 border">
+          <div class="dashboard__saving__list__progress-bar--inside pl-2">
+              15% of goal
+          </div>
+          
+        </div>
+
+
+      </div>
     </div>
     <% }) %>
     <% }else {%>
-    <div class="dashboard__savings-list__row dashboard__savings-list__row--savings d-flex flex-wrap justify-content-between align-items-center">
-      No savings to show
+    <div class="dashboard__saving-list__row dashboard__saving-list__row--saving d-flex flex-wrap justify-content-between align-items-center">
+      No saving to show
     </div>
     <% } %>
 
   </div>
 </div>
-<div class="dashboard__new-savings">
-  <button class="dashboard__new-savings__btn btn btn-success btn--create">New Goal</button>
-</div>
+<form action="../../../saving/new" method="POST" class="dashboard__new-saving form-inline">
+
+  <div class="form-group mr-2">
+    <label for="name" class="mr-2">Name</label>
+    <input type="text" class="form-control form-control-sm" id="name" name="name">
+  </div>
+  <div class="form-group mr-2">
+    <label for="goal" class="mr-2">Goal</label>
+    <input type="number" class="form-control form-control-sm" id="goal" name="goal">
+  </div>
+  <div class="form-group mr-2">
+    <label for="ends" class="mr-2">Ends</label>
+    <div class="d-flex">
+      <input type="checkbox" class="form-control form-control-sm mr-2" name="asEndingDate">
+      <input type="date" class="form-control form-control-sm" id="ends" name="endsOn">
+    </div>
+  </div>
+  <button class="dashboard__new-savings__btn btn btn-success btn--create btn-sm" type="submit">New Goal</button>
+</form>

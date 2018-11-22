@@ -35,7 +35,7 @@ const userSchema = new Schema({
     }
 ]
 , 
-  savingss: [
+  savings: [
     {
        type: mongoose.Schema.Types.ObjectId,
        ref: "Saving",
@@ -54,13 +54,12 @@ userSchema.pre("save", function(next) {
     bcrypt.hash(user.password, stage.saltingRounds, function(err, hash) {
       if (err) {
         console.log('error hashing')
-        console.log("Error hashing password for user", user.name);
+        console.log("Error hashing password for user", user.username);
         next(err);
       } else {
         console.log(hash)
         user.password = hash;
-        
-        next();
+                next();
       }
     });
   }
