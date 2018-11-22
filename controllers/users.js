@@ -64,7 +64,7 @@ module.exports = {
             result.status = status;
             result.result = user;
               //send response
-            res.status(status).send(result);
+            res.redirect('/user/'+ user._id + '/dashboard');
 
           }else{
             status = 401;
