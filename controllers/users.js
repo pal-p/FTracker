@@ -32,45 +32,50 @@ module.exports = {
     let status = 200;
     User.findOne({ email }, (err, user) => {
       if (!err && user) {
-              bcrypt          //TODO we could compare passwords inside user model
-          .compare(password, user.password)
-          .then(match => {
-            if (match) {
-              status = 200;
-              // Create a token
-              const payload = {
-                user: {
-                  _id: user._id,
-                  username: user.username,
-                  role: user.role
-                }
-              };
-              const options = {
-                expiresIn: "1d",
-                issuer: "https://mywebsite.com"
-              };
-              const secret = process.env.JWT_SECRET;
-              const token = jwt.sign(payload, secret, options);
-              new Cookies(req, res).set("access_token", token, {
-                httpOnly: true,
-                secure: false
-              });
-              result.token = token;
-              result.status = status;
-              result.result = user;
-            } else {
-              status = 401;
-              result.status = status;
-              result.error = `Authentication error`;
-            }
-            res.redirect("/user/" + user._id + "/dashboard");
-          })
-          .catch(err => {
+        user.verifyPassword(password, function(err, isMatch){
+          if(err){ //error is password comparison
             status = 500;
             result.status = status;
-            result.error = err;
+            result.error = "Invalid email and password";
             res.status(status).send(result);
-          });
+          }
+          //successful comparison hash === password
+          if(isMatch){
+            status = 200;
+            // Create a token
+            const payload = {
+              user: {
+                _id: user._id,
+                username: user.username,
+                role: user.role
+              }
+            };
+            const options = {
+              expiresIn: "1d",
+              issuer: "https://mywebsite.com"
+            };
+            const secret = process.env.JWT_SECRET;
+            const token = jwt.sign(payload, secret, options);
+            new Cookies(req, res).set("access_token", token, {
+              httpOnly: true,
+              secure: false
+            });
+            result.token = token;
+            result.status = status;
+            result.result = user;
+              //send response
+            res.status(status).send(result);
+
+          }else{
+            status = 401;
+            result.status = status;
+            result.error = "Invalid email and password";
+              //send response
+            res.status(status).send(result);
+
+          }
+        })
+
       } else {
         status = 404;
         result.status = status;
