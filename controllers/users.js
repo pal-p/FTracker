@@ -60,9 +60,6 @@ module.exports = {
               httpOnly: true,
               secure: false
             });
-            result.token = token;
-            result.status = status;
-            result.result = user;
               //send response
             res.redirect('/user/'+ user._id + '/dashboard');
 
