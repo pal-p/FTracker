@@ -18,11 +18,7 @@
                   <%=account.total_amount%>
                 </li>
                 <li class="dashboard__account-list__row__item p-1 dashboard__account-list__row__item--delete">
-                  <form action="/account/<%=account._id%>/delete" method="POST">
-                  <button type="submit" class="btn btn-danger">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </form>
+                <a href="/account/delete/<%=account._id%>" class="btn btn-danger acc_del">DELETE</a>
                 </li>
               </div>
       <% }) %>
