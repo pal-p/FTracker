@@ -28,6 +28,44 @@ module.exports = {
     },
     getNew: (req, res)=>{
         res.render('account_create')
+    },
+    delete: (req,res)=>{
+        var accId = req.params.id;
+        var userLoggedId = req.user._id;
+            Account.findOne({_id: accId,'owner.id': userLoggedId },(err,acc)=>{
+                if(err){
+                    res.status(500).send({'message':'Error occured while deleting Account'});
+                }
+              if(acc){
+                User.findById(userLoggedId)
+        .then((user)=>{
+                acc.remove();
+                user.accounts.remove(accId);
+                user.save();
+                res.status(200).send();
+            })
+        .catch((err)=>{
+            res.status(500).send({error:err, message:'User not found'});
+        })
+              }
+              else{
+                  res.status(404).send('No Account with Id exists');
+              }
+            
+          });
+    },
+    chkAccountNameExists: (req,res)=>{
+        Account.findOne({name: req.query.acc_name},(err,acc)=>{
+            if(err){
+                res.status(500).send({'message':'Error occured during Account name exists check'});
+            }
+            if(acc){
+                res.status(200).send({'acc_exists': 1});
+            }
+            else{
+                res.status(200).send({'acc_exists': 0});
+            }
+        });
     }
 
 }
