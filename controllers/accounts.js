@@ -55,12 +55,14 @@ module.exports = {
           });
     },
     chkAccountNameExists: (req,res)=>{
-        Account.findOne({name: req.query.acc_name},(err,acc)=>{
+        Account.findOne({name: req.query.acc_name, 'owner.id': req.user._id},(err,acc)=>{
+            console.log(req.user._id);
             if(err){
                 res.status(500).send({'message':'Error occured during Account name exists check'});
             }
             if(acc){
                 res.status(200).send({'acc_exists': 1});
+                console.log(acc)
             }
             else{
                 res.status(200).send({'acc_exists': 0});
