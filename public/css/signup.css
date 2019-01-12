@@ -1,1 +1,30 @@
 
+.reg-page {
+  background-color: rgb(194, 205, 241)
+
+}
+.reg-page__loginbox {
+  max-width: 25rem;
+  margin:0 auto;
+}
+.reg-page__loginbox {
+  max-width: 25rem;
+  margin:0 auto;
+}
+.reg-page__loginbtn {
+  margin-top:1rem;
+}
+.reg-page__loginfoot {
+  font-size:85%;   
+}   
+.reg-page__signupbox {
+  display:none;
+  max-width: 25rem;
+  margin:0 auto;
+}  
+.reg-page__signuphead {
+  float:right;
+  font-size: 65%;
+  position: relative;
+  bottom: -1rem;
+}

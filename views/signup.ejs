@@ -10,12 +10,14 @@
 
     <main role="main" class="main container-flex">
         <% include ./partials/navbar %>
-        <div  style="background-color: rgb(194, 205, 241)" class="container">
+        <div class="reg-page container">
             <!--Login form-->
-            <div id="loginbox" style="max-width: 25rem; margin:0 auto;" >
+            <div id="loginbox" class="reg-page__loginbox">
                 <div class="card bg-light">
                     <div class="card bg-lightcol">
-                        <div class="card-header">Login</div>
+                        <div class="card-header">
+                            Login
+                        </div>
                         <div class="card-body">
                             <form id="loginform" action="/user/login" method='POST'>
                                 <div class="form-group">
@@ -26,12 +28,12 @@
                                         placeholder="Enter Password">
                                 </div>
                                 <div class="card-footer">
-                                    <div  style="margin-top:1rem" class="col-sm-12 form-group">
+                                    <div class="reg-page__loginbtn col-sm-12 form-group">
                                         <button id="btn-login" type="submit" class="btn btn-primary">
                                             Login
                                         </button>
                                     </div>
-                                    <div style="font-size:85%" class="col-md-12 form-group">
+                                    <div class="reg-page__loginfoot col-md-12 form-group">
                                         Don't have an account!
                                         <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
                                             Sign Up Here
@@ -44,25 +46,34 @@
                 </div>
             </div>
             <!--Singup form-->
-            <div id="signupbox" style="display:none; max-width: 25rem; margin:0 auto;">
+            <div id="signupbox" class="reg-page__signupbox">
                 <div class="card bg-light">
                     <div class="card-header">
                         Sign up
-                        <div style="float:right; font-size: 65%; position: relative; bottom: -1rem"><a id="signinlink"
-                                href="" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                        <div class="reg-page__signuphead">
+                            <a id="signinlink" href="" onclick="$('#signupbox').hide(); $('#loginbox').show()">
+                                Sign In
+                            </a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <form id="signupform" action="/user/register" method='POST'>
                             <div class="form-group">
-                                <label for="username">Username</label>
+                                <label for="username">
+                                    Username
+                                </label>
                                 <input type="username" class="form-control" name="username" placeholder="User Name">
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email">
+                                    Email
+                                </label>
                                 <input type="email" class="form-control" name="email" placeholder="Email Address">
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
+                                <label for="password">
+                                    Password
+                                </label>
                                 <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
                             <div class="card-footer">
