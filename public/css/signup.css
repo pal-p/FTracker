@@ -1,14 +1,12 @@
-
+.main{
+  background: linear-gradient(to right bottom, #02c1ff, #0270ff)
+}
 .reg-page {
-  background-color: rgb(194, 205, 241)
-
+  opacity: 0.5;
 }
 .reg-page__loginbox {
   max-width: 25rem;
-  margin:0 auto;
-}
-.reg-page__loginbox {
-  max-width: 25rem;
+  height: 24rem;
   margin:0 auto;
 }
 .reg-page__loginbtn {
@@ -16,11 +14,12 @@
 }
 .reg-page__loginfoot {
   font-size:85%;   
-}   
+}    
 .reg-page__signupbox {
   display:none;
   max-width: 25rem;
-  margin:0 auto;
+  height: 24rem;
+  margin:0 auto; 
 }  
 .reg-page__signuphead {
   float:right;
